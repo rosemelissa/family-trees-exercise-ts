@@ -1,21 +1,25 @@
 import { Person } from "./personTypes";
 
-export function logAllPeopleInTree(topPerson: Person): void {
+export function buildStackList(topPerson: Person): string[] {
   const peopleStack: Person[] = [];
   peopleStack.push(topPerson);
+  const outputNames: string[] = [];
   while (peopleStack.length > 0) {
     const currentPerson: Person = peopleStack.pop()!;
-    console.log(currentPerson.name);
+    outputNames.push(currentPerson.name);
     peopleStack.push(...currentPerson.children);
   }
+  return outputNames;
 }
 
-export function logAllPeopleInTreeWithQueue(topPerson: Person): void {
+export function buildQueueList(topPerson: Person): string[] {
   const peopleStack: Person[] = [];
   peopleStack.push(topPerson);
+  const outputNames: string[] = [];
   while (peopleStack.length > 0) {
     const currentPerson: Person = peopleStack.shift()!;
-    console.log(currentPerson.name);
+    outputNames.push(currentPerson.name);
     peopleStack.push(...currentPerson.children);
   }
+  return outputNames;
 }

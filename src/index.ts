@@ -6,13 +6,14 @@ import { createStarkTree } from "./families/stark";
 import { logAllPeopleInTree, logAllPeopleInTreeWithQueue } from "./treeLogging";
 import { printBanner } from "./utils/bannerUtils";
 import { printPersonTreeAsAscii } from "./utils/toAsciiTree";
+import { logIfInTree } from "./log-if-in-tree";
 
 async function mainProgram() {
-  printBanner("BARATHEON");
-  printPersonTreeAsAscii(createBaratheonTree());
+  // printBanner("BARATHEON");
+  // printPersonTreeAsAscii(createBaratheonTree());
 
-  printBanner("STARK");
-  printPersonTreeAsAscii(createStarkTree());
+  // printBanner("STARK");
+  // printPersonTreeAsAscii(createStarkTree());
 
   // Uncomment to test your work..
 
@@ -28,6 +29,8 @@ async function mainProgram() {
   // logAllPeopleInTreeWithQueue(createBritishSuccessionTree());
 
   // You'll need to add more test code for later exercises, too.
+  logIfInTree("William", createBritishSuccessionTree());
+  logIfInTree("Katie", createBritishSuccessionTree());
 }
 
 mainProgram();
